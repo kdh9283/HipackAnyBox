@@ -31,7 +31,7 @@ import kr.co.packcom.hipackanybox.Network.NodeServerPostSend;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-
+//test
 public class 메인화면 extends AppCompatActivity implements View.OnClickListener {
     private TextView main_corp_name;
     private SharedPreferences sharedPreferences;
