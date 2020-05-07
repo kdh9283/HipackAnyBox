@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <!--네트워크 불안전 dialog -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+
+            <!--title바-->
+            <TextView
+                android:id="@+id/exemptionSubHeading4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#3399ff"
+                android:text="알림"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="#fff" />
+
+            <!--dialog contents-->
+
+            <TextView
+                android:id="@+id/dialog_text"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:text="네트워크 연결 상태를 확인해주세요."
+                android:gravity="center"
+                android:textColor="#828282"
+                android:textSize="16dp" />
+
+            <!--하단 버튼-->
+            <LinearLayout
+                android:layout_width="88dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:paddingBottom="10dp">
+                <Button
+                    android:id="@+id/btn_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="확인"
+                    android:background="#3399ff"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

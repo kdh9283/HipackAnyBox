@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <!--네트워크 불안전 dialog -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <!--title바-->
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:id="@+id/exemptionSubHeading4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#3399ff"
+                    android:text="알  림"
+                    android:gravity="center"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="#fff" />
+
+
+
+            </RelativeLayout>
+
+            <!--dialog contents-->
+
+            <TextView
+                android:id="@+id/dialog_text"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#828282"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+        <!--하단 버튼-->
+        <LinearLayout
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="76dp">
+            <RelativeLayout
+                android:layout_weight="1.25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <Button
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center"
+                    android:id="@+id/btn_ok"
+                    android:layout_width="88dp"
+                    android:layout_height="46dp"
+                    android:text="예"
+                    android:background="#3399ff"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    />
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_weight="1.25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <Button
+
+                    android:gravity="center"
+                    android:id="@+id/btn_cancle"
+                    android:layout_width="88dp"
+                    android:layout_height="46dp"
+                    android:text="아니오"
+                    android:background="#3399ff"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

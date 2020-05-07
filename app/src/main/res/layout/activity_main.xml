@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".메인화면">
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/main_corp_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:textColor="#3484e6"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="0.8dp"
+                android:background="#3484e6" />
+
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="애니박스"
+                android:textColor="#3484e6"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="130dp">
+        <com.pm10.library.CircleIndicator
+            android:id="@+id/circularindicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:p_gap="40dp"
+            app:p_radius="10dp"
+            app:p_strokeWidth="3dp"
+            app:p_defaultColor="@color/white"
+            app:p_selectedColor="#3484e6"
+            app:p_strokeColor="@color/gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:background="#D9FFFFFF"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_weight="7.5"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:id="@+id/main_menu1"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/i_07"
+                    android:layout_weight="7.8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                </ImageView>
+
+                <TextView
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:text="업체정보"
+                    android:layout_weight="2.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/main_menu2"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/i_01"
+                    android:layout_weight="7.8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                </ImageView>
+
+                <TextView
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:text="미수현황"
+                    android:layout_weight="2.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu3"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/i_05"
+                    android:layout_weight="7.8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                </ImageView>
+
+                <TextView
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:text="제품정보"
+                    android:layout_weight="2.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Since. 1993 ICD [HI,PACK System]"
+                android:textColor="#585763"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

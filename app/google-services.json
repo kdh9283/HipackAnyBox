@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "11429677695",
+    "firebase_url": "https://hipackfcm.firebaseio.com",
+    "project_id": "hipackfcm",
+    "storage_bucket": "hipackfcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11429677695:android:085c8410077dbba8324d4a",
+        "android_client_info": {
+          "package_name": "kr.co.packcom.delivery_chulha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11429677695-e3o44eb0gqsm7cl7k1k27rtf3kcaaj9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpWnWk-VFUI6NzYFTIey4Wu68sU8mLfSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11429677695-e3o44eb0gqsm7cl7k1k27rtf3kcaaj9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11429677695:android:e29555657d3a8cb8324d4a",
+        "android_client_info": {
+          "package_name": "kr.co.packcom.hipackanybox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11429677695-e3o44eb0gqsm7cl7k1k27rtf3kcaaj9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpWnWk-VFUI6NzYFTIey4Wu68sU8mLfSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11429677695-e3o44eb0gqsm7cl7k1k27rtf3kcaaj9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
