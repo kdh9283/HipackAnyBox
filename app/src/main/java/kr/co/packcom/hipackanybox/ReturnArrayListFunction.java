@@ -254,6 +254,7 @@ public class ReturnArrayListFunction {
     }
 
     public ArrayList<미수현황모델> 미수잔액모델리스트(String receiveMsg) {
+
         ArrayList<미수현황모델> list = new ArrayList<>();
         String IOType = "";
         String customID = "";
@@ -275,6 +276,7 @@ public class ReturnArrayListFunction {
         String Before2MonthLeftMoney = "";
 
         try {
+
             JSONArray jsonArray = new JSONArray(receiveMsg);
             JSONObject jsonObject;
 

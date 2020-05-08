@@ -99,7 +99,6 @@ public class 미수현황 extends AppCompatActivity {
         SendPost sendPost = new SendPost(sendFlag, "미수현황모델", callback, getApplicationContext());
         sendPost.execute();
 
-
     }
 
 
@@ -142,12 +141,14 @@ public class 미수현황 extends AppCompatActivity {
                     Log.d("resultMessage", resultMessage);
                     list = returnArrayListFunction.미수잔액모델리스트(resultMessage);
                     for (int i = 0; i < list.size(); i++) {
+
                         if (!group.contains(list.get(i).customSName)) {
 
                             group.add(list.get(i).customSName);
 
                         }
                     }
+
                     Log.d("list.size", list.size() + "");
                     adapter = new 미수현황리스트어뎁터();
 
@@ -162,6 +163,7 @@ public class 미수현황 extends AppCompatActivity {
 
 
                     }
+
                     misu_sum1.setText(decimalFormat.format(leftMoney));
                     misu_sum2.setText(decimalFormat.format(before1MonthLeftMoney));
                     asyncDialog.dismiss();

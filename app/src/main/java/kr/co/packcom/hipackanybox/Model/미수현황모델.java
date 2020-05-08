@@ -1,6 +1,6 @@
 package kr.co.packcom.hipackanybox.Model;
 
-import androidx.annotation.Nullable;
+
 
 public class 미수현황모델 implements Comparable<미수현황모델>{
     public String IOType;
@@ -41,8 +41,6 @@ public class 미수현황모델 implements Comparable<미수현황모델>{
         Before2MonthLeftMoney = before2MonthLeftMoney;
 
     }
-
-
 
     @Override
     public int compareTo(미수현황모델 o) {

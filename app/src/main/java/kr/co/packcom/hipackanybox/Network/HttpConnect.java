@@ -105,6 +105,17 @@ public class HttpConnect {
         client.newCall(request).enqueue(callback);
     }
 
+    //    http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel031productinfo_baseCustomer/@%EA%B1%B0%EB%9E%98%EC%B2%98ID/128
+    public void 제품정보(String phonenum, String corp_id, String key, Callback callback) {
+        String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel031productinfo_baseCustomer/@거래처ID/" + key;
+        Log.d("send ->", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(callback);
+    }
+
     private String ReplacePost(String uri_Value) {
 
         uri_Value =

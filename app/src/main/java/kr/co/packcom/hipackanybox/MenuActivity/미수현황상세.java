@@ -65,7 +65,6 @@ public class 미수현황상세 extends AppCompatActivity {
 
         layoutManager = new LinearLayoutManager(this);
         misu_detail_recyclerview.setLayoutManager(layoutManager);
-
         IOMoney_total1 = findViewById(R.id.IOMoney_total1);
         IOMoney_total2 = findViewById(R.id.IOMoney_total2);
         DiscountMoney = findViewById(R.id.DiscountMoney);

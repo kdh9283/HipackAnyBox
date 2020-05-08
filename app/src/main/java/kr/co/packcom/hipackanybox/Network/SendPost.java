@@ -35,6 +35,7 @@ public class SendPost extends AsyncTask<Void, Void, Void> {
         String corp_id = sharedPreferences.getString("corp_id", "");
         String user_name = sharedPreferences.getString("user_name", "");
         String customID = sharedPreferences.getString("customID", "");
+        String 거래처키 = sharedPreferences.getString("거래처키","");
         String s_today;
         Date today = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -61,6 +62,10 @@ public class SendPost extends AsyncTask<Void, Void, Void> {
 
             case "미수현황상세":
                 httpConnect.미수현황상세(phonenum, corp_id, s_today, customID, callback);
+                break;
+
+            case "제품정보":
+                httpConnect.제품정보(phonenum, corp_id,  거래처키, callback);
                 break;
 
         }

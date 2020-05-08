@@ -2,6 +2,11 @@ package kr.co.packcom.hipackanybox;
 
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +14,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,11 +41,31 @@ public class CodeName_List extends Activity {
     private RecyclerView.LayoutManager layoutManager;
     private 업체정보리스트어뎁터 adapter;
     private EditText ed_codename;
+    private Dialog asyncDialog;
+    private TextView tv_progress_message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_name__list);
+        asyncDialog = new Dialog(this);
+        asyncDialog.setCancelable(false);
+        asyncDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        asyncDialog.setContentView(R.layout.loading);
 
+        asyncDialog.show();
+        final ImageView img_loading_frame = asyncDialog.findViewById(R.id.iv_frame_loading);
+        final AnimationDrawable frameAnimation = (AnimationDrawable) img_loading_frame.getBackground();
+        tv_progress_message = asyncDialog.findViewById(R.id.tv_progress_message);
+        tv_progress_message.setText("업체정보를 불러오는 중 입니다");
+        //        frameAnimation.start();
+
+        img_loading_frame.post(new Runnable() {
+            @Override
+            public void run() {
+                frameAnimation.start();
+            }
+        });
         init();
 
 
@@ -64,6 +91,7 @@ public class CodeName_List extends Activity {
                 search(text);
             }
         });
+
         layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.code_name_recyclerview);
         recyclerView.setLayoutManager(layoutManager);
@@ -71,20 +99,27 @@ public class CodeName_List extends Activity {
         returnArrayListFunction = new ReturnArrayListFunction();
         handler = new CodeNameHandler();
         sendFlag = 1;
+
         SendPost sendPost = new SendPost(sendFlag, "account_code", callback, getApplicationContext());
         sendPost.execute();
+
     }
+
     private final Callback callback = new Callback() {
         @Override
         public void onFailure(Call call, IOException e) {
+            asyncDialog.dismiss();
+
             Log.d("aa", "콜백오류:" + e.getMessage());
             msg = handler.obtainMessage();
             msg.what = 100;
             handler.sendMessage(msg);
+
         }
 
         @Override
         public void onResponse(Call call, Response response) throws IOException {
+
 
             String body = response.body().string();
             Log.d("aa", "서버에서 응답한 Body:" + body);
@@ -98,11 +133,15 @@ public class CodeName_List extends Activity {
     };
 
     private class CodeNameHandler extends Handler {
-        @Override
-        public void handleMessage(Message msg) {
-            String resultMessage="";
 
-            switch (msg.what){
+        @Override
+
+        public void handleMessage(Message msg) {
+
+            String resultMessage = "";
+
+            switch (msg.what) {
+
                 case 1:
                     resultMessage = msg.obj.toString();
                     arraylist = new ArrayList<>();
@@ -111,14 +150,25 @@ public class CodeName_List extends Activity {
                     resultMessage = resultMessage.replaceAll("\\\\", "");
                     resultMessage = resultMessage.replaceAll("ª", "\\\\r\\\\n");
                     list = returnArrayListFunction.getAccountCodelist(resultMessage);
-                    adapter.setAccountlist(list,handler);
+                    adapter.setAccountlist(list, handler);
                     arraylist.addAll(list);
-                    recyclerView.setAdapter(adapter) ;
-                    Log.d("resultMessage",resultMessage);
+                    recyclerView.setAdapter(adapter);
+                    Log.d("resultMessage", resultMessage);
+                    asyncDialog.dismiss();
+
+                    break;
+
+                case 2:
+                    Intent intent = new Intent();
+                    intent.putExtra("상호",list.get(msg.arg1).축소상호);
+                    intent.putExtra("key",list.get(msg.arg1).거래처키);
+                    setResult(1,intent);
+                    finish();
                     break;
             }
         }
     }
+
     private void search(String text) {
 
         list.clear();
@@ -134,7 +184,9 @@ public class CodeName_List extends Activity {
                 }
             }
         }
+
         adapter.updatelist(list, handler);
+
     }
 
 }
