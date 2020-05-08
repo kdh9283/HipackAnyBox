@@ -18,10 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CodeName_List"
+        <activity android:name=".MenuActivity.제품정보상세"></activity>
+        <activity
+            android:name=".CodeName_List"
             android:label=""
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            ></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".MenuActivity.제품정보" />
         <activity android:name=".MenuActivity.미수현황상세" />
         <activity android:name=".MenuActivity.미수현황" />

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -44,6 +45,8 @@ public class 업체정보 extends AppCompatActivity {
     private ArrayList<업체정보모델> list;
     private EditText menu1_search;
     private ArrayList<업체정보모델> arraylist;
+    private SharedPreferences sharedPreferences;
+    private String intentString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,24 +57,8 @@ public class 업체정보 extends AppCompatActivity {
     }
 
     private void init() {
-        asyncDialog = new Dialog(this);
-        asyncDialog.setCancelable(false);
-        asyncDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        asyncDialog.setContentView(R.layout.loading);
-
-        asyncDialog.show();
-        final ImageView img_loading_frame = asyncDialog.findViewById(R.id.iv_frame_loading);
-        final AnimationDrawable frameAnimation = (AnimationDrawable) img_loading_frame.getBackground();
-        tv_progress_message = asyncDialog.findViewById(R.id.tv_progress_message);
-        tv_progress_message.setText("거래처 정보를 불러오는 중 입니다.");
-        //        frameAnimation.start();
-
-        img_loading_frame.post(new Runnable() {
-            @Override
-            public void run() {
-                frameAnimation.start();
-            }
-        });
+        sharedPreferences = getSharedPreferences("basicData", 0);
+        intentString = sharedPreferences.getString("account_list", "");
         menu1_search = findViewById(R.id.menu1_search);
         menu1_search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -99,9 +86,14 @@ public class 업체정보 extends AppCompatActivity {
         adapter = new 업체정보리스트어뎁터();
 
         returnArrayListFunction = new ReturnArrayListFunction();
-        sendFlag = 1;
-        SendPost sendPost = new SendPost(sendFlag, "account_code", callback, getApplicationContext());
-        sendPost.execute();
+        if (intentString.length() != 0) {
+            arraylist = new ArrayList<>();
+            list = returnArrayListFunction.getAccountCodelist(intentString);
+            adapter.setAccountlist(list, handler);
+            arraylist.addAll(list);
+            menu1_recyclerview.setAdapter(adapter);
+        }
+
     }
 
     private void search(String text) {
@@ -149,33 +141,17 @@ public class 업체정보 extends AppCompatActivity {
     private class Menu1Handler extends Handler {
         @Override
         public void handleMessage(Message msg) {
-            String resultMessage;
 
             switch (msg.what) {
                 case 1:
-                    resultMessage = msg.obj.toString();
-                    arraylist = new ArrayList<>();
-                    resultMessage = resultMessage.substring(1, resultMessage.length() - 1);
-
-                    resultMessage = resultMessage.replaceAll("\\\\\\\\r\\\\\\\\n", "ª");
-                    resultMessage = resultMessage.replaceAll("\\\\", "");
-                    resultMessage = resultMessage.replaceAll("ª", "\\\\r\\\\n");
-
-                    list = returnArrayListFunction.getAccountCodelist(resultMessage);
-                    arraylist.addAll(list);
-                    Log.d("사이즈", arraylist.size() + "");
-                    adapter.setAccountlist(list, handler);
-                    menu1_recyclerview.setAdapter(adapter);
-
-
-                    asyncDialog.dismiss();
+//
                     break;
                 // DetailAccountCode
                 case 2:
                     ArrayList<업체정보모델> sendlist = new ArrayList<>();
                     Intent intent = new Intent(업체정보.this, 업체정보상세.class);
                     sendlist.add(list.get(msg.arg1));
-                    intent.putExtra("list",sendlist);
+                    intent.putExtra("list", sendlist);
                     startActivity(intent);
 
                     break;

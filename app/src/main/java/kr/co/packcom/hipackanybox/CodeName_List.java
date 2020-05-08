@@ -4,6 +4,7 @@ package kr.co.packcom.hipackanybox;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -34,6 +35,7 @@ public class CodeName_List extends Activity {
     private int sendFlag = 0;
     private CodeNameHandler handler;
     private Message msg;
+    private String intentString;
     private ArrayList<업체정보모델> list;
     private ArrayList<업체정보모델> arraylist;
     private ReturnArrayListFunction returnArrayListFunction;
@@ -43,31 +45,16 @@ public class CodeName_List extends Activity {
     private EditText ed_codename;
     private Dialog asyncDialog;
     private TextView tv_progress_message;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_name__list);
-        asyncDialog = new Dialog(this);
-        asyncDialog.setCancelable(false);
-        asyncDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        asyncDialog.setContentView(R.layout.loading);
-
-        asyncDialog.show();
-        final ImageView img_loading_frame = asyncDialog.findViewById(R.id.iv_frame_loading);
-        final AnimationDrawable frameAnimation = (AnimationDrawable) img_loading_frame.getBackground();
-        tv_progress_message = asyncDialog.findViewById(R.id.tv_progress_message);
-        tv_progress_message.setText("업체정보를 불러오는 중 입니다");
-        //        frameAnimation.start();
-
-        img_loading_frame.post(new Runnable() {
-            @Override
-            public void run() {
-                frameAnimation.start();
-            }
-        });
+        sharedPreferences = getSharedPreferences("basicData",0);
+        intentString = sharedPreferences.getString("account_list","");
         init();
-
 
     }
 
@@ -98,10 +85,20 @@ public class CodeName_List extends Activity {
         adapter = new 업체정보리스트어뎁터();
         returnArrayListFunction = new ReturnArrayListFunction();
         handler = new CodeNameHandler();
-        sendFlag = 1;
 
-        SendPost sendPost = new SendPost(sendFlag, "account_code", callback, getApplicationContext());
-        sendPost.execute();
+        if(intentString.length()!=0){
+            arraylist = new ArrayList<>();
+            list = returnArrayListFunction.getAccountCodelist(intentString);
+            adapter.setAccountlist(list, handler);
+            arraylist.addAll(list);
+            recyclerView.setAdapter(adapter);
+
+        }
+
+//        sendFlag = 1;
+//
+//        SendPost sendPost = new SendPost(sendFlag, "account_code", callback, getApplicationContext());
+//        sendPost.execute();
 
     }
 

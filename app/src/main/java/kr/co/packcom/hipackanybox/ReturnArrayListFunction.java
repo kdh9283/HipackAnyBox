@@ -13,6 +13,7 @@ import kr.co.packcom.hipackanybox.Model.미수현황모델;
 import kr.co.packcom.hipackanybox.Model.미수현황상세모델;
 import kr.co.packcom.hipackanybox.Model.업체정보모델;
 import kr.co.packcom.hipackanybox.Model.로그인모델;
+import kr.co.packcom.hipackanybox.Model.제품정보모델;
 
 
 public class ReturnArrayListFunction {
@@ -386,11 +387,11 @@ public class ReturnArrayListFunction {
 
     public ArrayList<미수현황상세모델> 미수현황상세리스트(String receiveMsg) {
         ArrayList<미수현황상세모델> list = new ArrayList<>();
-        String IOType="";
-        String MonthNo="";
-        String IOMoney="";
-        String RecpMoney="";
-        String DiscountMoney="";
+        String IOType = "";
+        String MonthNo = "";
+        String IOMoney = "";
+        String RecpMoney = "";
+        String DiscountMoney = "";
         try {
             JSONArray jsonArray = new JSONArray(receiveMsg);
             JSONObject jsonObject;
@@ -424,7 +425,7 @@ public class ReturnArrayListFunction {
                 Log.d("IOMoney", IOMoney + " ");
                 Log.d("RecpMoney", RecpMoney + " ");
                 Log.d("DiscountMoney", DiscountMoney + " ");
-                list.add(new 미수현황상세모델(IOType,MonthNo,IOMoney,RecpMoney,DiscountMoney));
+                list.add(new 미수현황상세모델(IOType, MonthNo, IOMoney, RecpMoney, DiscountMoney));
 
             }
 
@@ -432,6 +433,290 @@ public class ReturnArrayListFunction {
             e.printStackTrace();
         }
 
+
+        return list;
+
+    }
+
+    public ArrayList<제품정보모델> 제품정보모델리스트(String msg) {
+        ArrayList<제품정보모델> list = new ArrayList<>();
+
+        String atype = "";
+        String setcnt = "";
+        String customID = "";
+        String customSName = "";
+        String prodID = "";
+        String prodName = "";
+        String pJang = "";
+        String pPock = "";
+        String pGo = "";
+        String pSize = "";
+        String prodUnit = "";
+        String deliverMemo = "";
+        String UpUserID = "";
+        String UpUserName = "";
+        String UpDatetime = "";
+        String bPublic = "";
+        String chkWork = "";
+        String paperName = "";
+        String givWD = "";
+        String givSC = "";
+        String wjName = "";
+        String SCState = "";
+        String prodTypeID = "";
+        String boxType = "";
+        String bVAT = "";
+        String bSET = "";
+        String aL = "";
+        String aW = "";
+        String pCnt = "";
+        String cL = "";
+        String cW = "";
+        String metrialID = "";
+        String WDName = "";
+        String WDmL = "";
+        String WDmW = "";
+        String WDpCnt = "";
+        String metrialGor = "";
+        String WDJang = "";
+        String WDPock = "";
+        String SCName = "";
+        String SCmL = "";
+        String SCmW = "";
+        String SCpCnt = "";
+
+        try {
+            JSONArray jsonArray = new JSONArray(msg);
+            JSONObject jsonObject;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                jsonObject = jsonArray.getJSONObject(i);
+
+                if (!jsonObject.isNull("atype")) {
+                    atype = jsonObject.getString("atype");
+                }
+                if (!jsonObject.isNull("setcnt")) {
+                    setcnt = jsonObject.getString("setcnt");
+
+                }
+                if (!jsonObject.isNull("customID")) {
+                    customID = jsonObject.getString("customID");
+
+                }
+                if (!jsonObject.isNull("customSName")) {
+                    customSName = jsonObject.getString("customSName");
+
+                }
+                if (!jsonObject.isNull("prodID")) {
+                    prodID = jsonObject.getString("prodID");
+
+                }
+                if (!jsonObject.isNull("prodName")) {
+                    prodName = jsonObject.getString("prodName");
+
+                }
+                if (!jsonObject.isNull("pJang")) {
+                    pJang = jsonObject.getString("pJang");
+
+                }
+                if (!jsonObject.isNull("pPock")) {
+                    pPock = jsonObject.getString("pPock");
+
+                }
+                if (!jsonObject.isNull("pGo")) {
+                    pGo = jsonObject.getString("pGo");
+
+                }
+                if (!jsonObject.isNull("pSize")) {
+                    pSize = jsonObject.getString("pSize");
+
+                }
+                if (!jsonObject.isNull("prodUnit")) {
+                    prodUnit = jsonObject.getString("prodUnit");
+                }
+                if (!jsonObject.isNull("deliverMemo")) {
+                    deliverMemo = jsonObject.getString("deliverMemo");
+
+                }
+                if (!jsonObject.isNull("UpUserID")) {
+                    UpUserID = jsonObject.getString("UpUserID");
+
+                }
+                if (!jsonObject.isNull("UpUserName")) {
+                    UpUserName = jsonObject.getString("UpUserName");
+
+                }
+                if (!jsonObject.isNull("UpDatetime")) {
+                    UpDatetime = jsonObject.getString("UpDatetime");
+
+                }
+                if (!jsonObject.isNull("bPublic")) {
+                    bPublic = jsonObject.getString("bPublic");
+
+                }
+                if (!jsonObject.isNull("chkWork")) {
+                    chkWork = jsonObject.getString("chkWork");
+
+                }
+                if (!jsonObject.isNull("paperName")) {
+                    paperName = jsonObject.getString("paperName");
+
+                }
+                if (!jsonObject.isNull("givWD")) {
+                    givWD = jsonObject.getString("givWD");
+
+                }
+                if (!jsonObject.isNull("givSC")) {
+                    givSC = jsonObject.getString("givSC");
+
+                }
+                if (!jsonObject.isNull("wjName")) {
+                    wjName = jsonObject.getString("wjName");
+                }
+                if (!jsonObject.isNull("SCState")) {
+                    SCState = jsonObject.getString("SCState");
+
+                }
+                if (!jsonObject.isNull("prodTypeID")) {
+                    prodTypeID = jsonObject.getString("prodTypeID");
+
+                }
+                if (!jsonObject.isNull("boxType")) {
+                    boxType = jsonObject.getString("boxType");
+
+                }
+                if (!jsonObject.isNull("bVAT")) {
+                    bVAT = jsonObject.getString("bVAT");
+
+                }
+                if (!jsonObject.isNull("bSET")) {
+                    bSET = jsonObject.getString("bSET");
+
+                }
+                if (!jsonObject.isNull("aL")) {
+                    aL = jsonObject.getString("aL");
+
+                }
+                if (!jsonObject.isNull("aW")) {
+                    aW = jsonObject.getString("aW");
+
+                }
+                if (!jsonObject.isNull("pCnt")) {
+                    pCnt = jsonObject.getString("pCnt");
+
+                }
+                if (!jsonObject.isNull("cL")) {
+                    cL = jsonObject.getString("cL");
+
+                }
+                if (!jsonObject.isNull("cW")) {
+                    cW = jsonObject.getString("cW");
+                }
+                if (!jsonObject.isNull("metrialID")) {
+                    metrialID = jsonObject.getString("metrialID");
+
+                }
+                if (!jsonObject.isNull("WDName")) {
+                    WDName = jsonObject.getString("WDName");
+
+                }
+                if (!jsonObject.isNull("WDmL")) {
+                    WDmL = jsonObject.getString("WDmL");
+
+                }
+                if (!jsonObject.isNull("WDmW")) {
+                    WDmW = jsonObject.getString("WDmW");
+
+                }
+                if (!jsonObject.isNull("WDpCnt")) {
+                    WDpCnt = jsonObject.getString("WDpCnt");
+
+                }
+                if (!jsonObject.isNull("metrialGor")) {
+                    metrialGor = jsonObject.getString("metrialGor");
+
+                }
+                if (!jsonObject.isNull("WDJang")) {
+                    WDJang = jsonObject.getString("WDJang");
+
+                }
+                if (!jsonObject.isNull("WDPock")) {
+                    WDPock = jsonObject.getString("WDPock");
+
+                }
+                if (!jsonObject.isNull("SCName")) {
+                    SCName = jsonObject.getString("SCName");
+
+                }
+                if (!jsonObject.isNull("SCmL")) {
+                    SCmL = jsonObject.getString("SCmL");
+
+                }
+                if (!jsonObject.isNull("SCmW")) {
+                    SCmW = jsonObject.getString("SCmW");
+
+                }
+                if (!jsonObject.isNull("SCpCnt")) {
+                    SCpCnt = jsonObject.getString("SCpCnt");
+
+                }
+
+
+                if (bPublic.equalsIgnoreCase("false")) {
+                    list.add(new 제품정보모델(atype, setcnt, customID, customSName, prodID, prodName, pJang, pPock, pGo, pSize, prodUnit, deliverMemo, UpUserID, UpUserName, UpDatetime, bPublic, chkWork, paperName, givWD,
+                            givSC, wjName, SCState, prodTypeID, boxType, bVAT, bSET, aL, aW, pCnt, cL, cW, metrialID, WDName, WDmL, WDmW, WDpCnt, metrialGor, WDJang, WDPock, SCName, SCmL, SCmW, SCpCnt));
+
+                    Log.d("========" + i, "번쩨========");
+                    Log.d("atype", atype + " ");
+                    Log.d("setcnt", setcnt + " ");
+                    Log.d("customID", customID + " ");
+                    Log.d("customSName", customSName + " ");
+                    Log.d("prodID", prodID + " ");
+                    Log.d("prodName", prodName + " ");
+                    Log.d("pJang", pJang + " ");
+                    Log.d("pPock", pPock + " ");
+                    Log.d("pGo", pGo + " ");
+                    Log.d("pSize", pSize + " ");
+                    Log.d("prodUnit", prodUnit + " ");
+                    Log.d("deliverMemo", deliverMemo + " ");
+                    Log.d("UpUserID", UpUserID + " ");
+                    Log.d("UpUserName", UpUserName + " ");
+                    Log.d("UpDatetime", UpDatetime + " ");
+                    Log.d("bPublic", bPublic + " ");
+                    Log.d("chkWork", chkWork + " ");
+                    Log.d("paperName", paperName + " ");
+                    Log.d("givWD", givWD + " ");
+                    Log.d("givSC", givSC + " ");
+                    Log.d("wjName", wjName + " ");
+                    Log.d("SCState", SCState + " ");
+                    Log.d("prodTypeID", prodTypeID + " ");
+                    Log.d("boxType", boxType + " ");
+                    Log.d("bVAT", bVAT + " ");
+                    Log.d("bSET", bSET + " ");
+                    Log.d("aL", aL + " ");
+                    Log.d("aW", aW + " ");
+                    Log.d("pCnt", pCnt + " ");
+                    Log.d("cL", cL + " ");
+                    Log.d("cW", cW + " ");
+                    Log.d("metrialID", metrialID + " ");
+                    Log.d("WDName", WDName + " ");
+                    Log.d("WDmL", WDmL + " ");
+                    Log.d("WDmW", WDmW + " ");
+                    Log.d("WDpCnt", WDpCnt + " ");
+                    Log.d("metrialGor", metrialGor + " ");
+                    Log.d("WDJang", WDJang + " ");
+                    Log.d("WDPock", WDPock + " ");
+                    Log.d("SCName", SCName + " ");
+                    Log.d("SCmL", SCmL + " ");
+                    Log.d("SCmW", SCmW + " ");
+                    Log.d("SCpCnt", SCpCnt + " ");
+                }
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         return list;
 

@@ -1,6 +1,9 @@
 package kr.co.packcom.hipackanybox.Model;
 
-public class 제품정보모델 {
+import java.io.Serializable;
+
+public class 제품정보모델 implements Serializable {
+
     public String atype="";
     public String setcnt="";
     public String customID="";
