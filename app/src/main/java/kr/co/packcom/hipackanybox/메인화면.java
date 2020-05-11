@@ -77,6 +77,8 @@ public class 메인화면 extends AppCompatActivity implements View.OnClickListe
             }
         });
         init();
+
+//test
     }
 
     private void init() {
