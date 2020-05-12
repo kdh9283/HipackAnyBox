@@ -73,7 +73,7 @@ public class 미수현황상세 extends AppCompatActivity {
         handler = new misu_handler();
         sendFlag = 1;
 
-        SendPost sendPost = new SendPost(sendFlag, "미수현황상세", callback, getApplicationContext());
+        SendPost sendPost = new SendPost(sendFlag, "spSel972repcIO_DetailList", callback, getApplicationContext());
         sendPost.execute();
 
     }

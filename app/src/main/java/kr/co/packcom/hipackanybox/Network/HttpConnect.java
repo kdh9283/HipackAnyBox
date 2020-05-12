@@ -65,7 +65,7 @@ public class HttpConnect {
 
     // 거래처 정보 조회 http://packcom.ml/WAS/AndroidService.svc/AndroidDefault/" +CORP_ID + "┘" +  phoneNumber + "┘" + USER_NAME + "/spSel011customersinfo_sNameAll
 
-    public void 거래처정보(String phoneNum, String corp_id, String user_name, Callback callback) {
+    public void spSel011customersinfo_sNameAll(String phoneNum, String corp_id, String user_name, Callback callback) {
 
         String url = http + "/WAS/AndroidService.svc/AndroidDefault/" + corp_id + "┘" + phoneNum + "┘" + user_name + "/spSel011customersinfo_sNameAll";
 
@@ -82,7 +82,7 @@ public class HttpConnect {
     }
 
     // 미수현황모델 표시 http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel971repcIO_ThreeMonthList/@%EC%B6%9C%EB%A0%A5%EC%9D%BC/2020-04-25
-    public void 미수잔액(String phoneNum, String corp_id, String date, Callback callback) {
+    public void spSel971repcIO_ThreeMonthList(String phoneNum, String corp_id, String date, Callback callback) {
         String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phoneNum + "┘/spSel971repcIO_ThreeMonthList/@출력일/" + date;
         Log.d("send ->", url);
 
@@ -94,7 +94,7 @@ public class HttpConnect {
 
     }
 
-    public void 미수현황상세(String phonenum, String corp_id, String s_today, String customID, Callback callback) {
+    public void spSel972repcIO_DetailList(String phonenum, String corp_id, String s_today, String customID, Callback callback) {
         String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel972repcIO_DetailList/@출력일┘@거래처ID/" + s_today + "┘" + customID;
         Log.d("send ->", url);
 
@@ -106,7 +106,7 @@ public class HttpConnect {
     }
 
     //    http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel031productinfo_baseCustomer/@%EA%B1%B0%EB%9E%98%EC%B2%98ID/128
-    public void 제품정보(String phonenum, String corp_id, String key, Callback callback) {
+    public void spSel031productinfo_baseCustomer(String phonenum, String corp_id, String key, Callback callback) {
         String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel031productinfo_baseCustomer/@거래처ID/" + key;
         Log.d("send ->", url);
         Request request = new Request.Builder()
@@ -115,7 +115,36 @@ public class HttpConnect {
 
         client.newCall(request).enqueue(callback);
     }
+    //http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel031productinfo_base2/@%EC%A0%9C%ED%92%88ID/10
+    public void spSel031productinfo_base2(String phonenum,String corp_id,String prodID,Callback callback){
+        String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel031productinfo_base2/@제품ID/" + prodID;
+        Log.d("send ->", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
 
+        client.newCall(request).enqueue(callback);
+    }
+    //http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel032productinfo_metrial/@%EC%A0%9C%ED%92%88ID/10
+    public void spSel032productinfo_metrial(String phonenum, String corp_id, String prodID, Callback callback) {
+        String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel032productinfo_metrial/@제품ID/" + prodID;
+        Log.d("send ->", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(callback);
+    }
+    //http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel031productinfo_base_PROCESS/@%EC%A0%9C%ED%92%88ID/10
+    public void spSel031productinfo_base_PROCESS(String phonenum, String corp_id, String prodID, Callback callback) {
+        String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel031productinfo_base_PROCESS/@제품ID/" + prodID;
+        Log.d("send ->", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(callback);
+    }
     private String ReplacePost(String uri_Value) {
 
         uri_Value =
@@ -152,6 +181,15 @@ public class HttpConnect {
 
     }
 
+//http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel037productinfo_photo/@%EC%A0%9C%ED%92%88ID/10
+    public void spSel037productinfo_photo(String phonenum, String corp_id, String prodID, Callback callback) {
+        String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel037productinfo_photo/@제품ID/" + prodID;
+        Log.d("send ->", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
 
+        client.newCall(request).enqueue(callback);
+    }
 }
 

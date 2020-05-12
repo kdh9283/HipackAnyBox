@@ -99,7 +99,7 @@ public class 제품정보 extends AppCompatActivity implements View.OnClickListe
                     editor.commit();
                     tv_name.setText(상호);
                     sendFlag = 1;
-                    SendPost sendPost = new SendPost(sendFlag, "제품정보", callback, getApplicationContext());
+                    SendPost sendPost = new SendPost(sendFlag, "spSel031productinfo_baseCustomer", callback, getApplicationContext());
                     sendPost.execute();
                 }
                 break;

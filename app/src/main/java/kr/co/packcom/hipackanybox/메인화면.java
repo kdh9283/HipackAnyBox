@@ -169,12 +169,9 @@ public class 메인화면 extends AppCompatActivity implements View.OnClickListe
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
                     sendFlag = 2;
-//
-                    SendPost sendPost = new SendPost(sendFlag, "account_code", callback, getApplicationContext());
+                    SendPost sendPost = new SendPost(sendFlag, "spSel011customersinfo_sNameAll", callback, getApplicationContext());
                     sendPost.execute();
-
                     break;
 
                 case 2:

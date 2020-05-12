@@ -96,7 +96,7 @@ public class 미수현황 extends AppCompatActivity {
         menu2_recyclerview.setLayoutManager(layoutManager);
         misu_sum1 = findViewById(R.id.misu_sum1);
         misu_sum2 = findViewById(R.id.misu_sum2);
-        SendPost sendPost = new SendPost(sendFlag, "미수현황모델", callback, getApplicationContext());
+        SendPost sendPost = new SendPost(sendFlag, "spSel971repcIO_ThreeMonthList", callback, getApplicationContext());
         sendPost.execute();
 
     }

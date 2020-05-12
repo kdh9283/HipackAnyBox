@@ -30,7 +30,7 @@ public class SendPost extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected Void doInBackground(Void... voids) {
-
+        String prodID = sharedPreferences.getString("prodID","");
         String phonenum = sharedPreferences.getString("phoneNum", "");
         String corp_id = sharedPreferences.getString("corp_id", "");
         String user_name = sharedPreferences.getString("user_name", "");
@@ -50,23 +50,39 @@ public class SendPost extends AsyncTask<Void, Void, Void> {
                 httpConnect.login(phonenum, callback);
                 break;
 
-            case "account_code":
+            case "spSel011customersinfo_sNameAll":
 
-                httpConnect.거래처정보(phonenum, corp_id, user_name, callback);
+                httpConnect.spSel011customersinfo_sNameAll(phonenum, corp_id, user_name, callback);
                 break;
 
-            case "미수현황모델":
+            case "spSel971repcIO_ThreeMonthList":
 
-                httpConnect.미수잔액(phonenum, corp_id, s_today, callback);
+                httpConnect.spSel971repcIO_ThreeMonthList(phonenum, corp_id, s_today, callback);
                 break;
 
-            case "미수현황상세":
-                httpConnect.미수현황상세(phonenum, corp_id, s_today, customID, callback);
+            case "spSel972repcIO_DetailList":
+                httpConnect.spSel972repcIO_DetailList(phonenum, corp_id, s_today, customID, callback);
+                break;
+                //제품정보리스트
+            case "spSel031productinfo_baseCustomer":
+                httpConnect.spSel031productinfo_baseCustomer(phonenum, corp_id,  거래처키, callback);
                 break;
 
-            case "제품정보":
-                httpConnect.제품정보(phonenum, corp_id,  거래처키, callback);
+                //박스사양
+            case "spSel031productinfo_base2":
+                httpConnect.spSel031productinfo_base2(phonenum,corp_id,prodID,callback);
                 break;
+                //자재사양
+            case "spSel032productinfo_metrial":
+                httpConnect.spSel032productinfo_metrial(phonenum,corp_id,prodID,callback);
+                break;
+            case "spSel031productinfo_base_PROCESS":
+                httpConnect.spSel031productinfo_base_PROCESS(phonenum,corp_id,prodID,callback);
+                break;
+            case "spSel037productinfo_photo":
+                httpConnect.spSel037productinfo_photo(phonenum,corp_id,prodID,callback);
+                break;
+
 
         }
 
