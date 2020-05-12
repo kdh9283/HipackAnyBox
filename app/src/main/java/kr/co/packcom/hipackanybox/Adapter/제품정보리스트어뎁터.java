@@ -64,7 +64,6 @@ public class 제품정보리스트어뎁터 extends RecyclerView.Adapter<Recycle
     public void setData(ArrayList<제품정보모델> list, Handler handler) {
         this.list = list;
         this.handler = handler;
-
         notifyDataSetChanged();
 
     }

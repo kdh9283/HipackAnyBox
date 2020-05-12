@@ -83,6 +83,10 @@ public class SendPost extends AsyncTask<Void, Void, Void> {
                 httpConnect.spSel037productinfo_photo(phonenum,corp_id,prodID,callback);
                 break;
 
+            case "spSel033productworkinfo_Memo":
+                httpConnect.spSel033productworkinfo_Memo(phonenum,corp_id,prodID,callback);
+                break;
+
 
         }
 

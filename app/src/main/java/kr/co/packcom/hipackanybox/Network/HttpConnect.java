@@ -191,5 +191,15 @@ public class HttpConnect {
 
         client.newCall(request).enqueue(callback);
     }
+    //http://miraebox.float-zone.com/WAS/AndroidService.svc/AndroidSearch/C4E5132036%E2%94%98010-0000-0000%E2%94%98/spSel033productworkinfo_Memo/@%EC%A0%9C%ED%92%88ID/10
+    public void spSel033productworkinfo_Memo(String phonenum, String corp_id, String prodID, Callback callback) {
+        String url = http + "/WAS/AndroidService.svc/AndroidSearch/" + corp_id + "┘" + phonenum + "┘/spSel033productworkinfo_Memo/@제품ID/" + prodID;
+        Log.d("send ->", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(callback);
+    }
 }
 

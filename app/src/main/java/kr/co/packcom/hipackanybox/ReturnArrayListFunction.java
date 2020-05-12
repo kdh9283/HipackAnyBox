@@ -17,6 +17,7 @@ import kr.co.packcom.hipackanybox.Model.업체정보모델;
 import kr.co.packcom.hipackanybox.Model.로그인모델;
 import kr.co.packcom.hipackanybox.Model.인쇄사양모델;
 import kr.co.packcom.hipackanybox.Model.자제사양모델;
+import kr.co.packcom.hipackanybox.Model.작업사양모델;
 import kr.co.packcom.hipackanybox.Model.제품정보모델;
 
 
@@ -1196,6 +1197,146 @@ public class ReturnArrayListFunction {
                 Log.d("UpUserName", UpUserName + " ");
                 Log.d("UpDatetime", UpDatetime + " ");
                 Log.d("customID", customID + " ");
+            }
+        } catch (JSONException e) {
+            e.getCause();
+        }
+        return list;
+    }
+
+    public ArrayList<작업사양모델> 작업사양리스트(String resultMessage) {
+        ArrayList<작업사양모델> list = new ArrayList<>();
+         String prodID="";
+         String PrintNo="" ;
+         String Printposition="" ;
+         String ColorType="" ;
+         String PastingID="" ;
+         String CoatingType="" ;
+         String CoatingID="" ;
+         String PushingNo="" ;
+         String Pushingposition="" ;
+         String ConnetingType="" ;
+         String ConnetingID="" ;
+         String PackCount="" ;
+         String PackType="" ;
+         String PackID="" ;
+         String levelCount="" ;
+         String loadposition="" ;
+         String barcode="" ;
+         String filmNo="" ;
+         String handChk ="";
+         String JobMemo ="";
+         String UpUserID ="";
+         String UpUserName ="";
+         String UpDatetime ="";
+        try {
+            JSONArray jsonArray = new JSONArray(resultMessage);
+            JSONObject jsonObject;
+
+
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                jsonObject = jsonArray.getJSONObject(i);
+                if (!jsonObject.isNull("prodID")) {
+                    prodID = jsonObject.getString("prodID");
+                }
+                if (!jsonObject.isNull("PrintNo")) {
+                    PrintNo = jsonObject.getString("PrintNo");
+                }
+                if (!jsonObject.isNull("Printposition")) {
+                    Printposition = jsonObject.getString("Printposition");
+                }
+                if (!jsonObject.isNull("ColorType")) {
+                    ColorType = jsonObject.getString("ColorType");
+                }
+                if (!jsonObject.isNull("PastingID")) {
+                    PastingID = jsonObject.getString("PastingID");
+                }
+                if (!jsonObject.isNull("CoatingType")) {
+                    CoatingType = jsonObject.getString("CoatingType");
+                }
+                if (!jsonObject.isNull("CoatingID")) {
+                    CoatingID = jsonObject.getString("CoatingID");
+                }
+                if (!jsonObject.isNull("PushingNo")) {
+                    PushingNo = jsonObject.getString("PushingNo");
+                }
+                if (!jsonObject.isNull("Pushingposition")) {
+                    Pushingposition = jsonObject.getString("Pushingposition");
+                }
+                if (!jsonObject.isNull("ConnetingType")) {
+                    ConnetingType = jsonObject.getString("ConnetingType");
+                }
+                if (!jsonObject.isNull("ConnetingID")) {
+                    ConnetingID = jsonObject.getString("ConnetingID");
+                }
+                if (!jsonObject.isNull("PackCount")) {
+                    PackCount = jsonObject.getString("PackCount");
+                }
+                if (!jsonObject.isNull("PackType")) {
+                    PackType = jsonObject.getString("PackType");
+                }
+                if (!jsonObject.isNull("PackID")) {
+                    PackID = jsonObject.getString("PackID");
+                }
+                if (!jsonObject.isNull("levelCount")) {
+                    levelCount = jsonObject.getString("levelCount");
+                }
+                if (!jsonObject.isNull("loadposition")) {
+                    loadposition = jsonObject.getString("loadposition");
+                }
+                if (!jsonObject.isNull("barcode")) {
+                    barcode = jsonObject.getString("barcode");
+                }
+                if (!jsonObject.isNull("filmNo")) {
+                    filmNo = jsonObject.getString("filmNo");
+                }
+                if (!jsonObject.isNull("handChk")) {
+                    handChk = jsonObject.getString("handChk");
+                }
+                if (!jsonObject.isNull("JobMemo")) {
+                    JobMemo = jsonObject.getString("JobMemo");
+                }
+                if (!jsonObject.isNull("UpUserID")) {
+                    UpUserID = jsonObject.getString("UpUserID");
+                }
+                if (!jsonObject.isNull("UpUserName")) {
+                    UpUserName = jsonObject.getString("UpUserName");
+                }
+                if (!jsonObject.isNull("UpDatetime")) {
+                    UpDatetime = jsonObject.getString("UpDatetime");
+                }
+                list.add(new 작업사양모델(prodID,PrintNo,Printposition,ColorType,PastingID,CoatingType,CoatingID,PushingNo,Pushingposition,ConnetingType,ConnetingID,PackCount,PackType,PackID,levelCount,loadposition,barcode,filmNo
+                        ,handChk,JobMemo,UpUserID,UpUserName,UpDatetime
+                        ));
+                Log.d("========" + i, "번쩨========");
+                Log.d("prodID", prodID + " ");
+                Log.d("PrintNo", PrintNo + " ");
+                Log.d("Printposition", Printposition + " ");
+                Log.d("ColorType", ColorType + " ");
+                Log.d("PastingID", PastingID + " ");
+                Log.d("CoatingType", CoatingType + " ");
+                Log.d("CoatingID", CoatingID + " ");
+                Log.d("PushingNo", PushingNo + " ");
+                Log.d("Pushingposition", Pushingposition + " ");
+                Log.d("ConnetingType", ConnetingType + " ");
+                Log.d("ConnetingID", ConnetingID + " ");
+                Log.d("PackCount", PackCount + " ");
+                Log.d("PackType", PackType + " ");
+                Log.d("PackID", PackID + " ");
+                Log.d("levelCount", levelCount + " ");
+                Log.d("loadposition", loadposition + " ");
+                Log.d("barcode", barcode + " ");
+                Log.d("filmNo", filmNo + " ");
+                Log.d("handChk", handChk + " ");
+                Log.d("JobMemo", JobMemo + " ");
+                Log.d("UpUserID", UpUserID + " ");
+                Log.d("UpUserName", UpUserName + " ");
+                Log.d("UpDatetime", UpDatetime + " ");
+
+
+
+
             }
         } catch (JSONException e) {
             e.getCause();

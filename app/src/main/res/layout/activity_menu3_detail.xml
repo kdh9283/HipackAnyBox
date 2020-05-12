@@ -90,7 +90,7 @@
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
+                        
                         android:textColor="#000">
 
                     </TextView>
@@ -136,7 +136,7 @@
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
+                        
                         android:textColor="#000">
 
                     </TextView>
@@ -183,7 +183,7 @@
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
+                        
                         android:textColor="#000">
 
                     </TextView>
@@ -230,7 +230,7 @@
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
+                        
                         android:textColor="#000">
 
                     </TextView>
@@ -277,7 +277,7 @@
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
+                        
                         android:textColor="#000">
 
                     </TextView>
@@ -324,7 +324,7 @@
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
+                        
                         android:textColor="#000">
 
                     </TextView>
@@ -364,13 +364,11 @@
 
                     <TextView
                         android:id="@+id/menu3_detail_pCnt"
-
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
                         android:textColor="#000">
 
                     </TextView>
@@ -410,13 +408,11 @@
 
                     <TextView
                         android:id="@+id/menu3_detail_prodUnit"
-
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#F0F0F0"
                         android:gravity="center|start"
                         android:paddingStart="10dp"
-                        android:text="중 박스"
                         android:textColor="#000">
 
                     </TextView>
@@ -800,6 +796,7 @@
                     android:layout_weight="7.6">
 
                     <TextView
+                        android:id="@+id/menu3_detail_WDJs"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#F0F0F0"
@@ -833,7 +830,6 @@
                         android:paddingStart="3dp"
                         android:text="스코아"
                         android:textColor="#000">
-
                     </TextView>
                 </LinearLayout>
 
@@ -844,6 +840,7 @@
                     android:layout_weight="7.6">
 
                     <TextView
+
                         android:id="@+id/menu3_detail_WDScore"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -856,7 +853,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -915,6 +911,7 @@
                     android:layout_weight="2.4">
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#DDDDDD"
@@ -944,6 +941,562 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:background="#CACACA">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:paddingStart="10dp"
+                    android:text="작업 사양"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="필름NO"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_filmNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="코팅"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_CoatingType"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="조판NO"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_PrintNo"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="조판위치"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_Printposition"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="인쇄색도"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_ColorType"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="목형NO"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_PushingNo"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="목형위치"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_Pushingposition"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="접합방법"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_ConnetingType"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="손잡이"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_handChk"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="포장매수"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_PackCount"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="포장방법"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+                        android:id="@+id/menu3_detail_PackType"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="center|start"
+                        android:paddingStart="10dp"
+                        
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.4">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#DDDDDD"
+                        android:gravity="center_vertical"
+                        android:paddingStart="3dp"
+                        android:text="참고사항"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="7.6">
+
+                    <TextView
+
+                        android:id="@+id/menu3_detail_JobMemo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F0F0F0"
+                        android:gravity="start"
+                        android:paddingStart="10dp"
+                        android:textColor="#000">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -960,18 +1513,29 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="300dp"
                 >
+                <TextView
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:id="@+id/menu3_no_image"
+                    android:text="등록된 인쇄사양이 없습니다."
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </TextView>
                 <ImageView
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
                     android:id="@+id/menu3_detail_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
-            </LinearLayout>
+            </FrameLayout>
 
         </LinearLayout>
-
 
     </ScrollView>
 
