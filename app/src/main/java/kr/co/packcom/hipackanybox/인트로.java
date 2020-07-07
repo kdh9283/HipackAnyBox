@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,7 +31,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import kr.co.packcom.hipackanybox.Dialog.NetworkCheckDialog;
 import kr.co.packcom.hipackanybox.Model.로그인모델;
@@ -219,11 +227,25 @@ public class 인트로 extends AppCompatActivity {
                                 tv_progress_message.setText("로그인 인증 중 입니다");
                                 sendFlag = 2;
                                 jsonObject = new JSONObject();
-                                jsonObject.put("phoneNum", phoneNum);
+                                암호화모듈 암호 = new 암호화모듈("ICD4662402");
+                                try {
+                                    Log.d("전송폰번호", phoneNum);
+                                    jsonObject.put("phoneNum", phoneNum);
+                                    jsonObject.put("phoneNum", 암호.암호화(phoneNum));
+                                    jsonObject.put("lastphoneNum", phoneNum.substring(phoneNum.length() - 4));
+                                } catch (NoSuchAlgorithmException | UnsupportedEncodingException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException e) {
+                                    e.printStackTrace();
+                                }
                                 NodeServerPostSend sendpost = new NodeServerPostSend(sendFlag, "login", jsonObject.toString(), callback);
                                 sendpost.execute();
                             } else {
                                 // 앱 업데이트
+                                finish();
+                                try {
+                                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
+                                } catch (Exception e) {
+                                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
+                                }
                             }
                         }
                     } catch (JSONException e) {
@@ -271,6 +293,7 @@ public class 인트로 extends AppCompatActivity {
 
                     break;
                 case 3:
+
                     Log.d("로그인 응답값 ->", resultMessage);
                     resultMessage = resultMessage.substring(1, resultMessage.length() - 1);
                     resultMessage = resultMessage.replaceAll(" ", "");
@@ -279,6 +302,7 @@ public class 인트로 extends AppCompatActivity {
                     Log.d("result", resultMessage);
                     list = returnArrayListFunction.getloginData(resultMessage);
                     Log.d("list.size", list.size() + "");
+
                     if (list.get(0).CORP_ID.equalsIgnoreCase("")) {
 
                         asyncDialog.dismiss();
@@ -288,13 +312,13 @@ public class 인트로 extends AppCompatActivity {
                         startActivity(dialog);
 
                     } else {
+
                         editor.putString("phonenum", getPhoneNumber());
                         editor.putString("corp_id", list.get(0).CORP_ID);
                         editor.putString("corp_name", list.get(0).CORP_NAME);
                         editor.putString("carnum", list.get(0).CARNUMBER);
                         editor.putString("ftpid", list.get(0).ftpid);
                         editor.putString("ftppw", list.get(0).ftppass);
-
                         editor.putString("WEBIMAGE_PATH", list.get(0).WEBIMAGE_PATH);
                         editor.apply();
 
@@ -319,14 +343,8 @@ public class 인트로 extends AppCompatActivity {
         getPhoneNumber = "010-0000-0000";
         if (getPhoneNumber.length() > 1) {
             Log.d("getphonenum", getPhoneNumber.substring(0, 3));
-
-            if (getPhoneNumber.substring(0, 3).equalsIgnoreCase("+82")) {
-                Log.d("바꿔야함", "oo");
-                getPhoneNumber = getPhoneNumber.replace("+82", "0");
-            }
-
+            getPhoneNumber = getPhoneNumber.replace("+82", "0");
             getPhoneNumber = getPhoneNumber.replaceAll("-", "");
-
         } else {
             getPhoneNumber = "1";
         }

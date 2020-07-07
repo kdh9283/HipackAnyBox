@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -96,6 +97,7 @@ public class 제품정보상세 extends AppCompatActivity {
         init();
     }
 
+    @SuppressLint("SetTextI18n")
     private void init() {
 
         returnArrayListFunction = new ReturnArrayListFunction();
@@ -187,9 +189,9 @@ public class 제품정보상세 extends AppCompatActivity {
                     menu3_detail_prodName.setText(boxlist.get(0).prodName);
                     menu3_detail_prodName_code.setText(boxlist.get(0).prodserialNo);
                     menu3_detail_boxType.setText(boxlist.get(0).boxType);
-                    menu3_detail_paperName.setText(boxlist.get(0).paperName + " (" + boxlist.get(0).metrialGor + "골)");
-                    menu3_detail_psize.setText(boxlist.get(0).pJang + " * " + boxlist.get(0).pPock + " * " + boxlist.get(0).pGo);
-                    menu3_detail_aLcW.setText(boxlist.get(0).aL + " * " + boxlist.get(0).aW + " (" + (Double.parseDouble(boxlist.get(0).aL) * Double.parseDouble(boxlist.get(0).aW)) / 1000000 + " ㎡)");
+                    menu3_detail_paperName.setText(String.format("%s (%s골)", boxlist.get(0).paperName, boxlist.get(0).metrialGor));
+                    menu3_detail_psize.setText(String.format("%s * %s * %s", boxlist.get(0).pJang, boxlist.get(0).pPock, boxlist.get(0).pGo));
+                    menu3_detail_aLcW.setText(String.format("%s * %s (%s ㎡)", boxlist.get(0).aL, boxlist.get(0).aW, (Double.parseDouble(boxlist.get(0).aL) * Double.parseDouble(boxlist.get(0).aW)) / 1000000));
                     menu3_detail_pCnt.setText(boxlist.get(0).pCnt);
                     menu3_detail_prodUnit.setText(decimalFormat.format(Double.parseDouble(boxlist.get(0).prodUnit)));
 
@@ -204,12 +206,13 @@ public class 제품정보상세 extends AppCompatActivity {
                     resultMessage = resultMessage.replaceAll("\\\\\\\\r\\\\\\\\n", "ª");
                     resultMessage = resultMessage.replaceAll("\\\\", "");
                     resultMessage = resultMessage.replaceAll("ª", "\\\\r\\\\n");
+
                     merriallist = returnArrayListFunction.자제사양리스트(resultMessage);
-                    menu3_detail_WDName.setText(merriallist.get(0).metrialName + " (" + merriallist.get(0).metrialGor + "골)");
-                    menu3_detail_WDmL_WDmW.setText(merriallist.get(0).mL + " * " + merriallist.get(0).mW + " (" + (Double.parseDouble(merriallist.get(0).mL) * Double.parseDouble(merriallist.get(0).mW)) / 1000000 + " ㎡)");
+                    menu3_detail_WDName.setText(String.format("%s (%s골)", merriallist.get(0).metrialName, merriallist.get(0).metrialGor));
+                    menu3_detail_WDmL_WDmW.setText(String.format("%s * %s (%s ㎡)", merriallist.get(0).mL, merriallist.get(0).mW, (Double.parseDouble(merriallist.get(0).mL) * Double.parseDouble(merriallist.get(0).mW)) / 1000000));
 
                     menu3_detail_WDpCnt.setText(merriallist.get(0).pCnt);
-                    menu3_detail_WDJang_WDPock.setText(merriallist.get(0).WDJang + " * " + merriallist.get(0).WDPock + " (" + (Double.parseDouble(merriallist.get(0).WDJang) * Double.parseDouble(merriallist.get(0).WDPock)) / 1000000 + " ㎡)");
+                    menu3_detail_WDJang_WDPock.setText(String.format("%s * %s (%s ㎡)", merriallist.get(0).WDJang, merriallist.get(0).WDPock, (Double.parseDouble(merriallist.get(0).WDJang) * Double.parseDouble(merriallist.get(0).WDPock)) / 1000000));
                     menu3_detail_WDScore.setText(merriallist.get(0).WDScore.replaceAll("\\*", " \\* "));
                     menu3_detail_WDJs.setText(merriallist.get(0).WDJs);
                     sendFlag = 3;
